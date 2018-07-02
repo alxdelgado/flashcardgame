@@ -1,5 +1,12 @@
 console.log('JS is working'); 
 
-let $questionsData = $('questionsData'); 
+// Populating the cards array 
 
-questionsData(); 
+console.log(questions)
+
+
+
+const printQuestion = () => {
+  // get random question from array
+  // print question and answers in html
+}
