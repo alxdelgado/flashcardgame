@@ -1,4 +1,11 @@
 body {
   background-color: rgba(0, 150, 234, 0.6);
+  font-color: black;
 
 };
+
+
+.questions-div {
+  font-color: black;
+  
+}

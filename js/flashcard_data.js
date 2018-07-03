@@ -1,30 +1,5 @@
 // console.log('JS is working'); 
 
-// // array containing the flash card data // 
-// const questionsData = [];
-// questionsData[0] = 'Inside which HTML element do we put the JavaScript?';
-// questionsData[1] = 'What is the correct JavaScript syntax to change the content of the HTML element below?';
-// questionsData[2] = 'Where is the correct place to insert a JavaScript?';
-// questionsData[3] = 'What is the correct syntax for referring to an external script called "xxx.js"?';
-// questionsData[4] = 'The external JavaScript file must contain the <script> tag.';
-// questionsData[5] = 'How do you write "Hello World" in an alert box?';
-// questionsData[6] = 'How do you create a function in JavaScript?'; 
-// questionsData[7] = 'How do you call a function named "myFunction"?';
-// questionsData[8] = 'How to write an IF statement in JavaScript?';
-// questionsData[9] = 'How to write an IF statement for executing some code if "i" is NOT equal to 5?'; 
-// questionsData[10] = 'How does a WHILE loop start?'; 
-// questionsData[11] = 'How does a FOR loop start?';
-// questionsData[12] = 'How can you add a comment in a JavaScript?'; 
-// questionsData[13] = 'How to insert a comment that has more than one line?';
-// questionsData[14] = 'What is the correct way to write a JavaScript array?'; 
-// questionsData[15] = 'How do you round the number 7.25, to the nearest integer?'; 
-// questionsData[16] = 'How do you find the number with the highest value of x and y?'; 
-// questionsData[17] = 'JavaScript is the same as Java.'; 
-// questionsData[18] = 'Which event occurs when the user clicks on an HTML element?';
-// questionsData[19] = 'Which operator is used to assign a value to a variable?'; 
-// questionsData[20] = 'What will the following code return: Boolean(10 > 9)';
-
-
 const questionsData = [{
   text: 'Inside which HTML element do we put the Javascript?',
   a: '<scripting>',
