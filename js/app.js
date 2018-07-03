@@ -1,6 +1,16 @@
 console.log('JS is working'); 
 
-// Populating the cards array 
+/// GLOBAL SCOPE ///
+
+let time = 0; 
+// window.alert('Enter Name');
+
+/// GLOBAL SCOPE ///
+
+
+/// GAME FUNCTION /// 
+
+// Function that prints a random questions and multiple choice answers.  
 
 const printQuestion = () => {
   // get random question from array
@@ -23,14 +33,56 @@ const printQuestion = () => {
     $h1.text(q[key]); 
     $div.append($h1);
     $('body').append($div);
-     
+
   } 
 
 };
 
 printQuestion();
 
-// // Append 'questionsData' to the body 
+/// GAME FUNCTION /// 
+
+/// EVENT LISTENERS ///
+
+$('.choice-1').on('click', (e) => {
+
+  // make selection for multiple choice 1 // 
+
+});
+
+$('.choice-2').on('click', (e) => {
+
+  // make selection for multiple choice 2 //
+
+}); 
+
+$('.choice-3').on('click', (e) => {
+
+  // make selection for multiple choice 3 // 
+  
+});
+
+$('.choice-4').on('click', (e) => {
+
+  // make selection for multiple choice 4 // 
+
+});
+
+
+/// GAME TIMER /// 
+
+// 6 min limit //
+
+const startGame = () => {
+  const timer = setInterval(() => {
+    time++; 
+
+  })
+  
+
+};
+
+
 
 
 
