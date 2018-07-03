@@ -105,7 +105,7 @@ const questionsData = [{
   text: 'How can you add a comment in a JavaScript?',
   a: 'This is a comment',
   b: '<!--This is a comment-->', 
-  c: '//This is a comment', 
+  c: '// This is a comment', 
   correct: 'c', 
 }, 
 

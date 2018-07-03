@@ -10,13 +10,13 @@ let time = 0;
 
 /// GAME FUNCTION /// 
 
-// Function that prints a random questions and multiple choice answers.  
+// Function that prints a random question and multiple choice answers.  
 
 const printQuestion = () => {
   // get random question from array
   // print question and answers in html
   // console.log(Math.floor(Math.random() * questionsData.length));
-  const index = Math.floor(Math.random()* questionsData.length);
+  const index = Math.floor(Math.random() * questionsData.length);
 
   console.log(questionsData[index].text);
   console.log(questionsData[index]['a']);
@@ -37,9 +37,17 @@ const printQuestion = () => {
       $div.append($h1);
       $('body').append($div);
     }
+    $('.choice-1').on('click', (e) => {
+        console.log(key);
+        if('click' === '.choice-1'){
+          return true; 
+        }
+
+    })
+
   }
-  console.log(key, 'key')
-  console.log(q[key]);
+  // console.log(key, 'key')
+  // console.log(q[key]);
 };
 
 printQuestion();
