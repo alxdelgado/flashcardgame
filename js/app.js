@@ -54,9 +54,25 @@ const printQuestion = () => {
 printQuestion();
 
 
-/// GAME OBJECT ///  
+/// GAME OBJECT ///
+
+const myGame = {
+
+myMethod: function Flashcardgame(score, timer, click){
+  this.score = score; 
+  this.timer = timer; 
+  this.click = click;
+
+  // console.log(myGame);
+
+  }
+};
+
+console.log(myGame);
 
 // create game object that entails score, timer and event listeners. 
+
+
 
 
 
