@@ -91,13 +91,6 @@ const game = {
     $('h1').remove();
     
 
-
-    // make q be last question in removedQuestions
-
-    // literally paste in old print question logic
-
-    // when it works delete the old function
-
     const q = this.removedQuestions[this.removedQuestions.length-1]
     console.log(q)
 
@@ -107,27 +100,47 @@ const game = {
     // create event listeners 
     // create the buttons based on the questions and answers. 
       // make an event listener for each ty 
-    console.log(key)
+      console.log(key)
 
-    if(key === 'text') {
-      const $h1 = $('<h1/>')
-      $h1.text(q[key])
-      $('body').append($h1);
-      console.log($h1)
-      console.log('text');
+      // prints the actualy text of the question
+      if(key === 'text') {
+        const $h1 = $('<h1/>')
+        $h1.text(q[key])
+        $('body').append($h1);
+        console.log($h1)
+        console.log('text');
 
-    }
-
-    else if(key !== 'correct'){
-      const $a = $('<button/>');
-      $a.text(q[key]); 
-      $('body').append($a); 
-       
       }
-  
+
+      // appends buttons corresponding to each choice to the page
+      else if(key !== 'correct'){
+        const $a = $('<button/>'); 
+        $a.text(q[key]);
+        
+        // add id to the button corresponding to the letter of the choice
+        $a.attr('id', 'multChoiceButtons');
+
+        console.log($a); 
+
+        $a.on('click', (e) => {
+          console.log($('#multChoiceButtons')); 
+        }); 
+        
+        // add listener to this button
+        // see if you can get listener to console.log the id attached to it       
+
+        $('body').append($a); 
+
+      }
+
+
     }  
 
+
   }
+
+
+
 
 
   // correct questions so far,
