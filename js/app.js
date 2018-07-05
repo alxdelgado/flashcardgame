@@ -20,7 +20,7 @@ const printQuestion = (question) => {
   // console.log(Math.floor(Math.random() * questionsData.length));
 
   // make this a method in your game object
-  const index = Math.floor(Math.random() * questionsData.length);
+  // const index = Math.floor(Math.random() * questionsData.length);
 
   // console.log(questionsData[index].text);
   // console.log(questionsData[index]['a']);
@@ -29,6 +29,79 @@ const printQuestion = (question) => {
   // print answers
   const q = questionsData[index]; 
   for (key in q) {
+    
+    // if, else statement that prints everything but the answer // 
+    // create event listeners 
+    // create the buttons based on the questions and answers. 
+      // make an event listener for each ty 
+    console.log(key)
+
+    // print the question
+    if(key === 'text') {
+      const $h1 = $('<h1/>')
+      $h1.text(q[key])
+      $('body').append($h1);
+      console.log($h1)
+      console.log('text');
+
+    }
+
+    // print the answer choices
+    else if(key !== 'correct'){
+      const $a = $('<button/>');
+      $a.text(q[key]); 
+      $('body').append($a); 
+       
+    }
+  
+  }
+
+  // console.log(key, 'key')
+  // console.log(q[key]) 
+};
+
+// printQuestion();
+
+
+// /// GAME OBJECT ///
+
+// // create a game object  
+
+const game = {
+  score: 0,
+  time: 10, // set initial values when u declare
+  removedQuestions: [], // initally this is empty
+  getRandomQuestion() {
+    const index = Math.floor(Math.random() * questionsData.length);
+    console.log(index)
+    // splice returns an array! https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    const arrWithQuestion = questionsData.splice(index, 1);
+    console.log(arrWithQuestion)
+    const question = arrWithQuestion[0];
+
+    this.removedQuestions.push(question)
+
+    this.printQuestion();
+  },
+
+
+  printQuestion() {
+   
+    $('button').remove(); 
+    $('h1').remove();
+    
+
+
+    // make q be last question in removedQuestions
+
+    // literally paste in old print question logic
+
+    // when it works delete the old function
+
+    const q = this.removedQuestions[this.removedQuestions.length-1]
+    console.log(q)
+
+    for (key in q) {
     
     // if, else statement that prints everything but the answer // 
     // create event listeners 
@@ -50,33 +123,11 @@ const printQuestion = (question) => {
       $a.text(q[key]); 
       $('body').append($a); 
        
-    }
+      }
   
-  }
-
-  // console.log(key, 'key')
-  // console.log(q[key]) 
-};
-
-printQuestion();
-
-
-// /// GAME OBJECT ///
-
-// // create a game object  
-
-const game = {
-  score: 0,
-  time: 10, // set initial values when u declare
-  removedQuestions: [], // initally this is empty
-  getRandomQuestion() {
-    const index = Math.floor(Math.random() * questionsData.length);
-    console.log(index)
-    this.removedQuestions.push(questionsData.splice(index, 1));
-
+    }  
 
   }
-  
 
 
   // correct questions so far,
@@ -98,6 +149,7 @@ console.log(questionsData);
 
 
 
+
 // const newGame = new MyGame(10, 8, 'click'); 
 // console.log(newGame)
 
@@ -110,7 +162,7 @@ console.log(questionsData);
 
 ////////////// TO DO LIST /////////////////
 
-// you need a method to get random question
+// you need a method to get random question 
 
 // that method should select the question/index,      
   
@@ -121,7 +173,7 @@ console.log(questionsData);
 
     // and/or you could store that specific question in a property in the game object
 
-  // and then it will call printQuestion(q) and pass in the quesiton that was randomly chosen
+  // and then it will call printQuestion(q) and pass in the question that was randomly chosen. 
 
 //   }
 
