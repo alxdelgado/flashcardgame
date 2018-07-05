@@ -2,7 +2,9 @@ console.log('JS is working');
 
 /// GLOBAL SCOPE ///
 
-let time = 0; 
+const gameTimer = 10;
+const gameScore = 8
+
 // window.alert('Enter Name');
 
 
@@ -12,10 +14,12 @@ let time = 0;
 
 // Function that prints a random question and multiple choice answers.  
 
-const printQuestion = () => {
+const printQuestion = (question) => {
   // get random question from array
   // print question and answers in html
   // console.log(Math.floor(Math.random() * questionsData.length));
+
+  // make this a method in your game object
   const index = Math.floor(Math.random() * questionsData.length);
 
   // console.log(questionsData[index].text);
@@ -24,13 +28,14 @@ const printQuestion = () => {
 
   // print answers
   const q = questionsData[index]; 
-  for (key in q){
+  for (key in q) {
     
     // if, else statement that prints everything but the answer // 
     // create event listeners 
     // create the buttons based on the questions and answers. 
       // make an event listener for each ty 
     console.log(key)
+
     if(key === 'text') {
       const $h1 = $('<h1/>')
       $h1.text(q[key])
@@ -39,6 +44,7 @@ const printQuestion = () => {
       console.log('text');
 
     }
+
     else if(key !== 'correct'){
       const $a = $('<button/>');
       $a.text(q[key]); 
@@ -47,51 +53,102 @@ const printQuestion = () => {
     }
   
   }
+
   // console.log(key, 'key')
-  // console.log(q[key]);
+  // console.log(q[key]) 
 };
 
 printQuestion();
 
 
-/// GAME OBJECT ///
+// /// GAME OBJECT ///
 
-const myGame = {
+// // create a game object  
 
-myMethod: function Flashcardgame(score, timer, click){
-  this.score = score; 
-  this.timer = timer; 
-  this.click = click;
+const game = {
+  score: 0,
+  time: 10, // set initial values when u declare
+  removedQuestions: [], // initally this is empty
+  getRandomQuestion() {
+    const index = Math.floor(Math.random() * questionsData.length);
+    console.log(index)
+    this.removedQuestions.push(questionsData.splice(index, 1));
 
-  // console.log(myGame);
 
   }
+  
+
+
+  // correct questions so far,
+  // property, 
+  // property
+  // doSomething() {
+      // this.score
+  // },
+
+ 
 };
 
-console.log(myGame);
+console.log(questionsData);
+game.getRandomQuestion();
+console.log(questionsData);
 
+
+
+
+
+
+// const newGame = new MyGame(10, 8, 'click'); 
+// console.log(newGame)
+
+
+// console.log(gameScore);
 // create game object that entails score, timer and event listeners. 
 
 
 
 
+////////////// TO DO LIST /////////////////
 
+// you need a method to get random question
 
-
-
-
-// /// GAME TIMER /// 
-
-// // 6 min limit //
-
-// const startGame = () => {
-//   const timer = setInterval(() => {
-//     time++; 
-
-//   })
+// that method should select the question/index,      
   
+// remove from original array 
 
-// }; 360000
+  // and store in an array in game object 
+  // then, the last thing in that array will therefore be current question
+
+    // and/or you could store that specific question in a property in the game object
+
+  // and then it will call printQuestion(q) and pass in the quesiton that was randomly chosen
+
+//   }
+
+
+
+// modify printQuestion to 
+// event listeners to answer buttons 
+
+
+
+
+// modify printQuestion to 
+// add id corresponding to answer choice to each button  when you're adding answer buttons
+// this will be used along with the current question that you are already tracking so that you can know which answer was chosen when user 
+// clicks a certiain button... which means you need 
+
+
+// method to check user answer -- this will be a method in game object
+// the listener will call this function and pass in id of chosen anser
+// this will also adjust any score etc propeterties in your object
+  // you may need a method to updateScoreboard(), also in game object, that is called by the checkAnswer method after it checks the answer
+
+// ------
+// make the next question auotmatically appear
+
+
+
 
 
 
